@@ -46,6 +46,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Archives
+jekyll-archives:
+   enabled: [ 'categories', 'tags' ]
+
+# Pagination
 paginate: 2
 paginate_path: '/page/:num/'
 
