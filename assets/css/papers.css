@@ -1,0 +1,207 @@
+:root {
+   --color-main: hsla(235,55%,47%,1);
+   --color-alt: hsla(235,55%,34%,1);
+
+   --color-bg: #fff;
+   --color-bg-alt: #f1f1f1;
+   --color-bg-title: #fff;
+   --color-bg-header: var(--color-main);
+   --color-fg: #616161;
+   --color-fg-alt: #bbb;
+   --color-fg-title: var(--color-main);
+   --color-fg-header: #fff;
+
+   --color-gradient: hsla(279,35%,60%,0.15);
+   --color-hairline: rgba(0,0,0,0.15);
+   --color-shadow: rgba(0,0,0,0.05);
+
+   --font: 'Lato', sans-serif;
+   --font-heading: 'Mukta', sans-serif;
+
+   --pad: 1.2rem;
+   --pad-small: 0.6rem;
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+      --color-bg: #222;
+      --color-bg-alt: #333;
+      --color-bg-title: #111;
+      --color-bg-header: hsla(235,65%,22%,1);
+      --color-fg: #eee;
+      --color-fg-alt: #888;
+
+      --color-gradient: hsla(235),95%,30%,0.15);
+      --color-hairline: rgba(255,255,255,0.25);
+   }
+}
+
+@media screen and (min-width:600px) {
+   :root {
+      --pad: 2rem;
+   }
+}
+
+/*
+ *  Elements
+ *
+ */
+
+a {
+   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: 400;
+   font-family: var(--font-heading);
+   margin: 2rem 0 1rem 0;
+}
+
+h1 {
+   font-size: 135%;
+   color: var(--color-main);
+}
+h2 {
+   font-size: 135%;
+   color: var(--color-fg);
+}
+
+/*
+ *  Layout
+ *
+ */
+
+body {
+   font-family: var(--font);
+   font-size: 12pt;
+   line-height: 1.3em;
+   background: var(--color-bg-alt) linear-gradient(to bottom, var(--color-gradient) 300px, transparent 600px);
+
+   min-height: 100vh;
+}
+
+.dw {
+   padding: 0 var(--pad);
+}
+
+.vpad {
+   padding-top: var(--pad);
+   padding-bottom: var(--pad);
+}
+
+.box {
+   background-color: var(--color-bg);
+   margin: 0 calc(-1 * var(--pad));
+   padding: var(--pad);
+}
+   .box > :first-child { margin-top: 0; }
+   .box > :last-child { margin-bottom: 0; }
+
+@media screen and (min-width:600px) {
+   .box {
+      margin-top: var(--pad);
+      margin-bottom: var(--pad);
+      box-shadow: 0 0 0.5em 0 var(--color-shadow);
+   }
+   .dw {
+      width: min(90%, 1400px);
+      margin: 0 auto;
+   }
+}
+
+/*  Header  */
+header {
+   background-color: var(--color-bg-header);
+   color: var(--color-fg-header);
+}
+   header #title {
+      background-color: var(--color-bg-title);
+      color: var(--color-main);
+      padding: var(--pad-small) 0;
+   }
+      header #title h1 {
+         margin: 0 auto;
+      }
+      header #title a {
+         color: var(--color-main);
+      }
+   header #hero { }
+      header #hero a {
+         color: #fff;
+      }
+      header #hero h2.subtitle {
+         font-size: 100%;
+         margin: 0;
+         color: var(--color-fg-header)
+      }
+      header #hero nav {
+         margin-top: var(--pad-small);
+         font-size: 80%;
+      }
+         header #hero nav a {
+            display: block;
+         }
+
+@media screen and (min-width:800px) {
+   header #hero {
+      min-height: 250px;
+   }
+      header #hero > div {
+         display: grid;
+         grid-template-columns: calc(220px + var(--pad)) auto;
+      }
+         header #hero nav {
+            justify-self: end;
+            margin-top: 0;
+         }
+}
+
+/*  Main  */
+
+main {
+   display: grid;
+   grid-gap: calc(var(--pad) * 2);
+}
+   main aside {
+      margin-top: var(--pad);
+   }
+      main aside a {
+         font-weight: 600;
+      }
+   main a:is(:link,:visited,:hover,:active,:focus) {
+      color: var(--color-main);
+      border-bottom: 1px solid transparent;
+   }
+   main a:is(:hover,:active,:focus) {
+      color: var(--color-main);
+      border-bottom-color: var(--color-hairline);
+   }
+   main :is(h1,h2) {
+      font-size: 145%;
+      padding-bottom: var(--pad-small);
+      border-bottom: 1px solid var(--color-hairline);
+   }
+   main :is(p,ul,ol,dl,blockquote) {
+      color: var(--color-fg);
+      line-height: 1.6em;
+   }
+
+@media screen and (min-width:1024px) {
+   main {
+      grid-template-columns: auto 320px;
+   }
+}
+
+/*  Footer  */
+
+footer { }
+
+/*
+ *  Common classes
+ *
+ */
+
+/*  Meta  */
+.meta {
+   color: var(--color-fg-alt);
+}

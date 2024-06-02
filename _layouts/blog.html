@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section>
+   {% for page in paginator.posts %}
+      {%- include post.html -%}
+   {% endfor %}
+</section>
+
+<!-- Pagination links -->
+<section class="pagination">
+   <div class="older">
+      {% if paginator.next_page %}
+         <a href="{{ paginator.next_page_path }}" class="button"><span>Older posts</span></a>
+      {% endif %}
+   </div>
+   <span class="page_number">
+      {{ paginator.page }}/{{ paginator.total_pages }}
+   </span>
+   <div class="newer">
+      {% if paginator.previous_page %}
+         <a href="{{ paginator.previous_page_path }}" class="button"><span>Newer posts</span></a>
+      {% endif %}
+   </div>
+</section>

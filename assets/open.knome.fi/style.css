@@ -1,0 +1,22 @@
+:root {
+   --color-main: hsla(96,55%,47%,1);
+   --color-alt: hsla(96,55%,34%,1);
+
+   --color-digitoucan: rgba(212,0,0,1);
+   --color-gradient: hsla(140,35%,60%,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+      --color-bg-header: hsla(96,65%,22%,1);
+      --color-gradient: hsla(96,95%,30%,0.15);
+   }
+}
+
+header #hero {
+   background: url(open.png) 50% 0 / auto 100% no-repeat, url(open-lines.png) 50% 0 repeat, linear-gradient(to right bottom, var(--color-main), var(--color-alt));
+}
+
+main a[href*='digitoucan']:is(:link,:visited,:hover,:active,:focus) {
+   color: var(--color-digitoucan);
+}

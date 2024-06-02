@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section class="box">
+   <h2>Browse</h2>
+   <h3>By serie</h3>
+   {%- assign terms = site.posts | map: 'series' | join: ','  | split: ','  | group_by: serie -%}
+   {%- for term in terms -%}
+      {{ term.name }}
+   {%- endfor -%}
+   <h3>By category</h3>
+   {%- assign terms = site.posts | map: 'categories' | join: ','  | split: ','  | group_by: category -%}
+   {%- for term in terms -%}
+      {{ term.name }}
+   {%- endfor -%}
+   <h3>By tag</h3>
+   {%- assign terms = site.posts | map: 'tags' | join: ','  | split: ','  | group_by: tag -%}
+   {%- for term in terms -%}
+      {{ term.name }}
+   {%- endfor -%}
+</section>

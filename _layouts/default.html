@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+   {%- include layout/head.html -%}
+   <body id="{{ page.path | remove: '.md' }}">
+      {%- include layout/header.html -%}
+      <main class="dw">
+         <section class="content">
+            {{ content }}
+         </section>
+         <aside>
+            {%- capture sidebar -%}{%- include sidebar.md -%}{%- endcapture -%}
+            {{ sidebar | markdownify }}
+         </aside>
+      </main>
+      {%- include layout/footer.html -%}
+   </body>
+</html>

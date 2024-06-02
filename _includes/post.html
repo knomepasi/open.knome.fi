@@ -1,0 +1,23 @@
+<article class="page box">
+   <h1>
+      <a href="{{ page.url }}">
+         {{ page.title }}
+      </a>
+   </h1>
+   {{ page.content }}
+   <ul class="meta">
+      <li>{{ page.date | date: site.date_format }}</li>
+      {%- if page.category -%}
+         {{ page.category }}
+      {%- endif -%}
+      {%- if page.tag -%}
+         {%- if page.category -%}
+            &nbsp;&mdash;&nbsp;
+         {%- endif -%}
+         {%- for tag in page.tag -%}
+            {{ tag }}
+            {%- if forloop.last -%}{%- else -%},&nbsp;{%- endif -%}
+         {%- endfor -%}
+      {%- endif -%}
+   </ul>
+</article>
