@@ -46,8 +46,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-#paginate: 2
-#paginate_path: '/page/:num/'
+paginate: 2
+paginate_path: '/page/:num/'
 
 # Defaults
 defaults:
