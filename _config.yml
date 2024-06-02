@@ -38,7 +38,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 exclude:
-  - asset_sources/
   - Gemfile
   - Gemfile.lock
   - README.md
@@ -47,8 +46,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-paginate: 2
-paginate_path: '/page/:num/'
+#paginate: 2
+#paginate_path: '/page/:num/'
 
 # Defaults
 defaults:
