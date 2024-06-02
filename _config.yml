@@ -34,6 +34,7 @@ nav_links:
 # Build settings
 markdown: kramdown
 plugins:
+  - jekyll-archives
   - jekyll-feed
   - jekyll-paginate
 exclude:
